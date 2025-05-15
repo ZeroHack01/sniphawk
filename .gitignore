@@ -1,6 +1,14 @@
+# Project-specific
 sniphawk
 *.log
-*.exe
-*.out
 *.zip
+
+# Go build artifacts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
 
