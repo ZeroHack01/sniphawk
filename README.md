@@ -32,7 +32,16 @@
 
 ## 🎯 Installation
 
-Make sure you have [Go](https://golang.org/dl/) installed (version 1.18+ recommended).
+### Prerequisites
+
+1. [Go](https://golang.org/dl/) installed (version 1.18+ recommended)
+2. **libpcap** development files:
+   - Ubuntu/Debian: `sudo apt-get install libpcap-dev`
+   - CentOS/RHEL: `sudo yum install libpcap-devel`
+   - macOS: `brew install libpcap`
+   - Windows: Install [Npcap](https://npcap.com/#download) with development files
+
+### Installation Steps
 
 ```bash
 # Clone the repository
@@ -41,35 +50,99 @@ git clone https://github.com/ZeroHack01/sniphawk.git
 # Navigate to project directory
 cd sniphawk
 
-# Install dependencies
-go mod tidy
+# Install required Go packages
+go get github.com/google/gopacket
+go get github.com/google/gopacket/pcap
+go get github.com/fatih/color
 
 # Build the binary
 go build -o sniphawk sniphawk.go
+
+# Or alternatively with go mod:
+go mod init github.com/ZeroHack01/sniphawk
+go mod tidy
+go build
 ```
+
+### Troubleshooting Installation
+
+If you encounter errors like `pcap.h: No such file or directory`:
+- Make sure libpcap development files are installed
+- On Windows, ensure Npcap is installed with the SDK option
 
 ---
 
 ## 🛠️ Usage
 
-Run with `sudo` to capture network traffic:
+### Step 1: Find your network interface
+
+First, find your active network interface name:
 
 ```bash
-sudo ./sniphawk --interface=wlp2s0 --skip-encrypted=true
+# On Linux
+ip a
+
+# On macOS
+ifconfig
+
+# On Windows
+ipconfig
 ```
 
-### Available flags
+Look for interfaces like `eth0`, `wlan0`, `en0`, or similar that show your active connection.
 
-| Flag | Description | Default |
-|------|-------------|---------|
-| `--interface` | Network interface to capture on | `wlp2s0` |
-| `--port` | Filter by specific port (e.g., 80) | `0` (all) |
-| `--protocol` | Filter by protocol (`tcp`, `udp`, `icmp`) | none |
-| `--skip-encrypted` | Skip encrypted traffic (port 443) | `true` |
+### Step 2: Run Sniphawk
+
+Run with `sudo` (required for packet capture):
+
+```bash
+# Basic usage with default interface (eth0)
+sudo ./sniphawk
+
+# Specify a different interface (example: wlan0)
+sudo ./sniphawk -i wlan0
+
+# Or using the long flag format
+sudo ./sniphawk --interface=wlan0
+```
+
+### Step 3: View network traffic
+
+Once running, Sniphawk will:
+1. Display the colorful banner
+2. Start capturing and displaying packets in real-time
+3. Show traffic summaries every 30 seconds
+
+Press `Ctrl+C` to stop the capture.
+
+### Complete Flag Reference
+
+| Flag | Short | Description | Example | Default |
+|------|-------|-------------|---------|---------|
+| `--interface` | `-i` | Network interface to capture on | `--interface=wlan0` | `eth0` |
+| `--port` | `-p` | Filter by specific port | `--port=80` | `0` (all ports) |
+| `--protocol` | `-proto` | Filter by protocol | `--protocol=tcp` | all protocols |
+| `--skip-encrypted` | `-s` | Skip HTTPS traffic | `--skip-encrypted=false` | `true` |
+| `--help` | `-h` | Show help message | `--help` | n/a |
+
+### Examples
+
+```bash
+# Capture only HTTP traffic (port 80)
+sudo ./sniphawk -i eth0 -p 80
+
+# Capture only TCP traffic including encrypted traffic
+sudo ./sniphawk -i wlan0 --protocol=tcp --skip-encrypted=false
+
+# Capture only UDP traffic (e.g., DNS)
+sudo ./sniphawk -i eth0 --protocol=udp
+```
 
 ---
 
-## 🖥️ Example Output
+## 🖥️ Example Output & Interpretation
+
+When running, Sniphawk captures packets and displays them in a colorful, easy-to-read format:
 
 ```
 🕒 Timestamp: 2025-05-15T19:47:18+06:00
@@ -79,27 +152,52 @@ sudo ./sniphawk --interface=wlp2s0 --skip-encrypted=true
 ----------------------------------------------------
 ```
 
-### 📊 Live Traffic Summary
+### Understanding the Output
 
-Every 30 seconds, Sniphawk prints:
-* Top 5 IP addresses by packet count
-* Top 5 ports by packet count
+Each packet is broken down into:
 
-Example:
+| Symbol | Meaning | Example |
+|--------|---------|---------|
+| 🕒 | When the packet was captured | `2025-05-15T19:47:18+06:00` |
+| 🔗 | Source and destination IP addresses + Protocol | `192.168.0.109 → 104.18.32.47 | Protocol: TCP` |
+| 📦 | TCP port information (if TCP packet) | `47812 → 443` (local port → destination port) |
+| 📨 | UDP port information (if UDP packet) | `53212 → 53` (typically DNS traffic) |
+| 💥 | ICMP information (if ICMP packet) | `ICMP Packet Detected` |
+| 📝 | Payload/data content (may be encrypted) | `[Binary or Encrypted Data]` |
+
+### Traffic Summary Analysis
+
+Every 30 seconds, Sniphawk displays a traffic summary:
 
 ```
 📊 ==== Sniphawk Traffic Summary (last 30s) ==== 📊
 Top IPs:
-  192.168.0.109 : 120 packets
-  104.18.32.47  : 80 packets
-  142.250.196.35: 50 packets
+  192.168.0.109 : 120 packets (Your device)
+  104.18.32.47  : 80 packets  (Remote server)
+  142.250.196.35: 50 packets  (Google server)
 
 Top Ports:
-  443: 130 packets
-  80 : 60 packets
-  53 : 40 packets
+  443: 130 packets (HTTPS)
+  80 : 60 packets  (HTTP)
+  53 : 40 packets  (DNS)
 ==============================================
 ```
+
+This summary helps you quickly identify:
+- Which devices are communicating most frequently
+- Which services (ports) are most active
+- Potential security concerns (unexpected connections)
+
+### Common Network Patterns
+
+| Port | Service | What it typically means |
+|------|---------|-------------------------|
+| 80   | HTTP    | Web browsing (unencrypted) |
+| 443  | HTTPS   | Secure web browsing |
+| 53   | DNS     | Domain name lookups |
+| 67/68| DHCP    | Obtaining IP addresses |
+| 22   | SSH     | Secure terminal connections |
+| 25   | SMTP    | Email sending |
 
 ---
 
