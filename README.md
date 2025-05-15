@@ -1,14 +1,10 @@
-# <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Eagle.png" width="35" /> Sniphawk — Advanced Packet Sniffer in Go <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Snake.png" width="25" />
+# ⚡ Sniphawk — Advanced Packet Sniffer in Go 🐍
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Go Report Card](https://goreportcard.com/badge/github.com/ZeroHack01/sniphawk)](https://goreportcard.com/report/github.com/ZeroHack01/sniphawk)
 [![GitHub issues](https://img.shields.io/github/issues/ZeroHack01/sniphawk)](https://github.com/ZeroHack01/sniphawk/issues)
-[![Go Version](https://img.shields.io/github/go-mod/go-version/ZeroHack01/sniphawk?color=00ADD8)](go.mod)
+[![Go](https://img.shields.io/badge/Go-1.18+-00ADD8?style=flat&logo=go)](https://golang.org/dl/)
 [![Last Commit](https://img.shields.io/github/last-commit/ZeroHack01/sniphawk?color=orange)](https://github.com/ZeroHack01/sniphawk/commits/main)
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/ZeroHack01/sniphawk/main/assets/banner.png" alt="Sniphawk Banner" width="70%">
-</div>
 
 <p align="center">
   <b>A blazing fast network packet analyzer written in Go</b><br>
@@ -17,49 +13,24 @@
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Rocket.png" width="25" /> Overview
+## 🚀 Overview
 
 **Sniphawk** is a powerful, real-time network packet sniffer built in **Go**, designed to capture, analyze, and display live network traffic on any specified interface. This project showcases practical skills in network analysis and Go programming while providing security professionals with an intuitive tool for traffic inspection.
 
-<details>
-  <summary><b>🎬 See Sniphawk in action!</b></summary>
-  <img src="https://raw.githubusercontent.com/ZeroHack01/sniphawk/main/assets/demo.gif" alt="Sniphawk Demo" width="85%">
-</details>
+---
+
+## ✨ Features
+
+- 🕵️‍♂️ Capture **TCP**, **UDP**, and **ICMP** packets in real-time
+- 🔍 Intelligent filtering by **port** and **protocol**
+- 🚫 Option to skip encrypted traffic (e.g., HTTPS on port 443)
+- 📊 Real-time summary of **top IPs** and **most active ports** every 30 seconds
+- 🎨 Colorful CLI output with a professional banner
+- 🧩 Minimal dependencies for easy setup and portability
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Sparkles.png" width="25" /> Features
-
-<table>
-  <tr>
-    <td><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Detective.png" width="17" /></td>
-    <td>Capture <b>TCP</b>, <b>UDP</b>, and <b>ICMP</b> packets in real-time</td>
-  </tr>
-  <tr>
-    <td><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Magnifying%20Glass%20Tilted%20Right.png" width="17" /></td>
-    <td>Intelligent filtering by <b>port</b> and <b>protocol</b></td>
-  </tr>
-  <tr>
-    <td><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Prohibited.png" width="17" /></td>
-    <td>Option to skip encrypted traffic (e.g., HTTPS on port 443)</td>
-  </tr>
-  <tr>
-    <td><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" width="17" /></td>
-    <td>Real-time summary of <b>top IPs</b> and <b>most active ports</b> every 30 seconds</td>
-  </tr>
-  <tr>
-    <td><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Artist%20Palette.png" width="17" /></td>
-    <td>Colorful CLI output with a professional banner</td>
-  </tr>
-  <tr>
-    <td><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Puzzle%20Piece.png" width="17" /></td>
-    <td>Minimal dependencies for easy setup and portability</td>
-  </tr>
-</table>
-
----
-
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bullseye.png" width="25" /> Installation
+## 🎯 Installation
 
 Make sure you have [Go](https://golang.org/dl/) installed (version 1.18+ recommended).
 
@@ -79,7 +50,7 @@ go build -o sniphawk sniphawk.go
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Hammer%20and%20Wrench.png" width="25" /> Usage
+## 🛠️ Usage
 
 Run with `sudo` to capture network traffic:
 
@@ -98,7 +69,7 @@ sudo ./sniphawk --interface=wlp2s0 --skip-encrypted=true
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Desktop%20Computer.png" width="25" /> Example Output
+## 🖥️ Example Output
 
 ```
 🕒 Timestamp: 2025-05-15T19:47:18+06:00
@@ -108,7 +79,7 @@ sudo ./sniphawk --interface=wlp2s0 --skip-encrypted=true
 ----------------------------------------------------
 ```
 
-### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" width="20" /> Live Traffic Summary
+### 📊 Live Traffic Summary
 
 Every 30 seconds, Sniphawk prints:
 * Top 5 IP addresses by packet count
@@ -132,7 +103,7 @@ Top Ports:
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Gear.png" width="25" /> Dependencies
+## ⚙️ Dependencies
 
 * **gopacket** — packet processing
 * **fatih/color** — colorful CLI output
@@ -145,7 +116,7 @@ go mod tidy
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Graduation%20Cap.png" width="25" /> About This Project
+## 🎓 About This Project
 
 This tool was developed during the **CodeAlpha Cybersecurity Internship**, to demonstrate hands-on experience with:
 
@@ -153,19 +124,27 @@ This tool was developed during the **CodeAlpha Cybersecurity Internship**, to de
 * Writing performant CLI tools in Go
 * Understanding of TCP/IP and network protocols
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/ZeroHack01/sniphawk/main/assets/codealpha.png" alt="CodeAlpha Logo" width="200px">
-</div>
+---
+
+## ⚠️ Disclaimer
+
+This tool is provided for **educational and legitimate security testing purposes only**. By using Sniphawk, you agree to:
+
+1. **Only monitor networks you own or have explicit permission to test**
+2. **Follow all applicable laws and regulations** regarding network monitoring and privacy
+3. **Not use this tool for any illegal or unauthorized activities**
+
+The author and contributors are not responsible for any misuse or damage caused by this software. Always obtain proper authorization before monitoring any network.
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Page%20with%20Curl.png" width="25" /> License
+## 📄 License
 
 This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Handshake.png" width="25" /> Contributing
+## 🤝 Contributing
 
 Contributions are welcome! Feel free to open issues or submit pull requests for enhancements or bug fixes.
 
@@ -177,7 +156,7 @@ Contributions are welcome! Feel free to open issues or submit pull requests for 
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Incoming%20Envelope.png" width="25" /> Contact
+## 📫 Contact
 
 For questions or collaboration, reach me at:
 
