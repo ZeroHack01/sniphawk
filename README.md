@@ -10,9 +10,7 @@
   <b>A blazing fast network packet analyzer written in Go</b><br>
   <sub>Built for the CodeAlpha Cybersecurity Internship</sub>
 </p>
-
 ---
-
 ## 🚀 Overview
 
 **Sniphawk** is a powerful, real-time network packet sniffer built in **Go**, designed to capture, analyze, and display live network traffic on any specified interface. This project showcases practical skills in network analysis and Go programming while providing security professionals with an intuitive tool for traffic inspection.
