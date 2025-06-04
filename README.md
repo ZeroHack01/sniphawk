@@ -13,7 +13,7 @@
 ║                    A D V A N C E D   P A C K E T   H U N T E R                  ║
 ║                                                                                  ║
 ╚══════════════════════════════════════════════════════════════════════════════════╝
-
+---
 <p align="center">
   <img src="https://img.shields.io/badge/THREAT_LEVEL-🔴_CRITICAL-ff0000?style=for-the-badge&logo=hackthebox&logoColor=white"/>
   <img src="https://img.shields.io/badge/STATUS-🟢_OPERATIONAL-00ff00?style=for-the-badge&logo=statuspage&logoColor=white"/>
