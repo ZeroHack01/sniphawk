@@ -1,4 +1,4 @@
-⚡ SN1PH4WK — Elite Packet Sniffer in Go 🐍
+⚡ SN1PH4WK — Cyber Packet Sniffer in Go 🐍
 
   
   
@@ -8,29 +8,29 @@
 
 
 
-  A high-octane network packet analyzer forged in Go
+  A blazing-fast network packet analyzer forged in Go
   Crafted for the CodeAlpha Cybersecurity Internship
 
 
 
-// Mission Overview 🚀
-SN1PH4WK is a cutting-edge, real-time packet sniffer built in Go, engineered to capture, dissect, and visualize live network traffic with surgical precision. Designed for cybersecurity pros and network enthusiasts, this tool delivers unparalleled insights into your network's pulse, all wrapped in a sleek, neon-charged CLI interface.
+// Cyber Mission 🚀
+SN1PH4WK is your ultimate weapon for real-time network traffic analysis. Built in Go, this elite packet sniffer captures, dissects, and visualizes live data streams with surgical precision. Designed for cybersecurity warriors and network ninjas, it’s your neon-lit portal into the heart of the digital grid. 🌌
 
-// Core Features ✨
+// Elite Features ✨
 
-🕵️‍♂️ Real-Time Capture: Snag TCP, UDP, and ICMP packets as they fly across the wire.
-🔍 Smart Filtering: Zero in on specific ports or protocols with pinpoint accuracy.
-🚫 Encryption Bypass Option: Toggle to skip encrypted traffic (e.g., HTTPS on port 443).
-📊 Dynamic Analytics: Get real-time summaries of top IPs and active ports every 30 seconds.
-🎨 Vivid CLI: Neon-green output with a professional-grade banner for that hacker aesthetic.
-🧩 Lightweight Design: Minimal dependencies for rapid deployment and portability.
+🕵️‍♂️ Live Packet Capture: Snag TCP, UDP, and ICMP packets in real-time with zero lag.
+🔍 Precision Filtering: Target specific ports or protocols like a digital sharpshooter.
+🚫 Encryption Toggle: Optionally skip encrypted traffic (e.g., HTTPS on port 443).
+📊 Neon Analytics: Real-time breakdowns of top IPs and active ports every 30 seconds.
+🎨 Cyberpunk CLI: Vibrant, neon-green output with a pro-grade banner for max hacker vibes.
+🧩 Lightweight Core: Minimal dependencies for instant deployment across platforms.
 
 
-// System Setup 🎯
-Prerequisites
+// System Boot 🎯
+> Prerequisites
 
 Go: Version 1.18+ (Download).
-libpcap: Required for packet capture.
+libpcap: Essential for packet capture.
 Ubuntu/Debian: sudo apt-get install libpcap-dev
 CentOS/RHEL: sudo yum install libpcap-devel
 macOS: brew install libpcap
@@ -38,19 +38,19 @@ Windows: Install Npcap with dev files.
 
 
 
-Installation Protocol
+> Installation Protocol
 # Clone the repository
 git clone https://github.com/ZeroHack01/sniphawk.git
 
-# Enter the project directory
+# Navigate to the project directory
 cd sniphawk
 
-# Fetch Go dependencies
+# Install Go dependencies
 go get github.com/google/gopacket
 go get github.com/google/gopacket/pcap
 go get github.com/fatih/color
 
-# Compile the binary
+# Build the binary
 go build -o sniphawk sniphawk.go
 
 # Or use go mod for a clean build
@@ -58,18 +58,18 @@ go mod init github.com/ZeroHack01/sniphawk
 go mod tidy
 go build
 
-Troubleshooting
+> Debug Matrix
 
 Error: pcap.h: No such file or directory
-Ensure libpcap development files are installed.
-Windows users: Verify Npcap SDK is included during installation.
+Verify libpcap development files are installed.
+Windows users: Ensure Npcap SDK is enabled during installation.
 
 
 
 
-// Operational Guide 🛠️
-Step 1: Identify Network Interface
-Locate your active network interface:
+// Operational Uplink 🛠️
+> Step 1: Locate Interface
+Identify your active network interface:
 # Linux
 ip a
 
@@ -80,8 +80,8 @@ ifconfig
 ipconfig
 
 Look for interfaces like eth0, wlan0, or en0.
-Step 2: Launch SN1PH4WK
-Run with elevated privileges (required for packet capture):
+> Step 2: Engage SN1PH4WK
+Run with elevated privileges:
 # Default interface (eth0)
 sudo ./sniphawk
 
@@ -91,15 +91,15 @@ sudo ./sniphawk -i wlan0
 # Long flag format
 sudo ./sniphawk --interface=wlan0
 
-Step 3: Monitor the Grid
+> Step 3: Scan the Grid
 SN1PH4WK will:
 
-Flash a vibrant neon banner.
-Stream live packet data in real-time.
-Deliver traffic summaries every 30 seconds.
+Flash a neon-charged banner.
+Stream live packet data in vivid colors.
+Deliver analytics every 30 seconds.
 
-Stop capture with Ctrl+C.
-Command Flags
+Stop with Ctrl+C.
+> Command Flags
 
 
 
@@ -141,12 +141,12 @@ true
 
 --help
 -h
-Display help
+Show help
 --help
 n/a
 
 
-Usage Examples
+> Usage Examples
 # Capture HTTP traffic (port 80)
 sudo ./sniphawk -i eth0 -p 80
 
@@ -157,15 +157,15 @@ sudo ./sniphawk -i wlan0 --protocol=tcp --skip-encrypted=false
 sudo ./sniphawk -i eth0 --protocol=udp
 
 
-// Output Breakdown 🖥️
-SN1PH4WK delivers a vivid, color-coded stream of packet data:
-<span style="color: #00FF00;">🕒 Timestamp: 2025-06-05T12:16:00+06:00</span>
-<span style="color: #39FF14;">🔗 IP: 192.168.0.109 → 104.18.32.47 | Protocol: TCP</span>
-<span style="color: #FF4500;">📦 TCP: 47812 → 443</span>
-<span style="color: #FFD700;">📝 Payload: [Binary or Encrypted Data]</span>
-<span style="color: #00FFFF;">----------------------------------------------------</span>
+// Data Stream Breakdown 🖥️
+SN1PH4WK outputs packets in a neon-lit, hacker-friendly format:
+<span style="color: #00FF00; font-family: 'Courier New', monospace;">🕒 Timestamp: 2025-06-05T12:19:00+06:00</span>
+<span style="color: #39FF14; font-family: 'Courier New', monospace;">🔗 IP: 192.168.0.109 → 104.18.32.47 | Protocol: TCP</span>
+<span style="color: #FF4500; font-family: 'Courier New', monospace;">📦 TCP: 47812 → 443</span>
+<span style="color: #FFD700; font-family: 'Courier New', monospace;">📝 Payload: [Binary or Encrypted Data]</span>
+<span style="color: #00FFFF; font-family: 'Courier New', monospace;">══════════════════════════════════════</span>
 
-Output Symbols
+> Output Symbols
 
 
 
@@ -176,13 +176,13 @@ Example
 
 
 🕒
-Capture timestamp
-2025-06-05T12:16:00+06:00
+Timestamp
+2025-06-05T12:19:00+06:00
 
 
 🔗
-Source/Dest IPs + Protocol
-`192.168.0.109 → 104.18.32.47
+IPs + Protocol
+192.168.0.109 → 104.18.32.47
 
 
 📦
@@ -192,7 +192,7 @@ TCP ports
 
 📨
 UDP ports
-53212 → 53 (DNS traffic)
+53212 → 53
 
 
 💥
@@ -201,48 +201,48 @@ ICMP Packet Detected
 
 
 📝
-Payload content
+Payload
 [Binary or Encrypted Data]
 
 
-Traffic Summary
-Every 30 seconds, a neon-lit summary highlights:
-<span style="color: #00FFFF;">📊 ==== SN1PH4WK Traffic Report (Last 30s) ==== 📊</span>
-<span style="color: #39FF14;">Top IPs:</span>
+> Traffic Analytics
+Every 30 seconds, a glowing summary lights up:
+<span style="color: #00FFFF; font-family: 'Courier New', monospace;">📊 ════ SN1PH4WK Traffic Matrix (Last 30s) ════ 📊</span>
+<span style="color: #39FF14; font-family: 'Courier New', monospace;">Top IPs:</span>
   <span style="color: #FF69B4;">192.168.0.109</span> : 120 packets (Local device)
   <span style="color: #FF69B4;">104.18.32.47</span>  : 80 packets (Remote server)
   <span style="color: #FF69B4;">142.250.196.35</span>: 50 packets (Google server)
 
-<span style="color: #39FF14;">Top Ports:</span>
+<span style="color: #39FF14; font-family: 'Courier New', monospace;">Top Ports:</span>
   <span style="color: #FF4500;">443</span>: 130 packets (HTTPS)
   <span style="color: #FF4500;">80</span> : 60 packets (HTTP)
   <span style="color: #FF4500;">53</span> : 40 packets (DNS)
-<span style="color: #00FFFF;">==============================================</span>
+<span style="color: #00FFFF; font-family: 'Courier New', monospace;">══════════════════════════════════════</span>
 
-This helps you spot:
+This reveals:
 
-High-traffic devices.
-Active services/ports.
-Potential security red flags.
+Dominant devices in the traffic stream.
+Hotspot ports and services.
+Potential security anomalies.
 
-Common Network Patterns
+> Network Patterns
 
 
 
 Port
 Service
-Typical Use Case
+Typical Use
 
 
 
 80
 HTTP
-Unencrypted web traffic
+Unencrypted web
 
 
 443
 HTTPS
-Secure web traffic
+Secure web
 
 
 53
@@ -252,7 +252,7 @@ Domain lookups
 
 67/68
 DHCP
-IP address assignment
+IP assignment
 
 
 22
@@ -266,54 +266,54 @@ Email delivery
 
 
 
-// Dependencies ⚙️
+// Core Dependencies ⚙️
 
-gopacket: Packet processing powerhouse.
-fatih/color: Neon CLI styling.
+gopacket: Packet processing engine.
+fatih/color: Neon CLI output.
 
 Install with:
 go mod tidy
 
 
-// Project Origins 🎓
-Developed during the CodeAlpha Cybersecurity Internship, SN1PH4WK showcases expertise in:
+// Project Genesis 🎓
+Forged during the CodeAlpha Cybersecurity Internship, SN1PH4WK demonstrates mastery in:
 
-Network traffic analysis and packet dissection.
-High-performance Go for CLI tools.
-TCP/IP mastery and protocol deep-dives.
+Network traffic dissection and analysis.
+High-performance Go CLI development.
+TCP/IP protocol expertise.
 
 
-// Ethical Disclaimer ⚠️
-SN1PH4WK is for educational and authorized security testing only. By using this tool, you agree to:
+// Ethical Directive ⚠️
+SN1PH4WK is for authorized security testing and education only. Users must:
 
-Monitor only networks you own or have explicit permission to analyze.
-Comply with all laws and regulations on network monitoring and privacy.
-Avoid any illegal or unauthorized activities.
+Monitor only networks with explicit permission.
+Adhere to all legal and privacy regulations.
+Avoid unauthorized or illegal activities.
 
-The developers are not liable for misuse or damages. Always secure proper authorization.
+Developers are not liable for misuse. Secure authorization before scanning.
 
 // License 📜
-Licensed under the MIT License. See LICENSE for details.
+MIT License. See LICENSE for details.
 
-// Contribute to the Grid 🤝
-Join the syndicate! Open issues or submit PRs to enhance SN1PH4WK.
+// Join the Cyber Collective 🤝
+Contribute to the grid! Open issues or PRs to level up SN1PH4WK.
 
 Fork the repo.
-Create a feature branch: git checkout -b feature/epic-upgrade
-Commit changes: git commit -m 'Added epic upgrade'
-Push: git push origin feature/epic-upgrade
+Branch out: git checkout -b feature/cyber-upgrade
+Commit: git commit -m 'Added cyber upgrade'
+Push: git push origin feature/cyber-upgrade
 Submit a Pull Request.
 
 
-// Connect with the Architect 📫
+// Connect to the Source 📫
 
 GitHub: ZeroHack01
 Email: mongwoiching2080@gmail.com
 
 
 
-  Unleash the packets, rule the network! 🦅 🐍
+  Crack the network, own the grid! 🦅 🐍
 
 
 
-  Crafted with ❤️ by ZeroHack01
+  Forged with ❤️ by ZeroHack01
