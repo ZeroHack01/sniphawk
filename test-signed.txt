@@ -1,0 +1,4 @@
+Signed test
+Signed test git add test-signed.txt
+Signed test git add test-signed.txt
+Signed test
